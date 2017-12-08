@@ -1,0 +1,29 @@
+{{#hasPhoto}}
+<div id="homeView_photo_wall">
+	<div id="photo_wall_header">{{photo_header}}</div>
+	<div id="photo_wall">
+		<div id="photo_wall_content">
+			{{#photos}}
+			<div class="photo_list" style="background-image:url(img/{{img}})"></div>
+			{{/photos}}
+		</div>
+	</div>
+</div>
+{{/hasPhoto}}
+
+<div id="section_header">{{secction_header}}</div>
+{{#hasCreat}}
+<div id="homeView_creat_login">
+	<div style="display:inline-block">: :</div>
+	<div id="homeView_creat">{{creat}}</div>
+	<div style="display:inline-block"> |</div>
+	<div id="homeView_login">{{login}}</div>
+	<div style="display:inline-block">: :</div>
+</div>
+{{/hasCreat}}
+{{#article}}
+<div id="radom_list">
+	<div class="article_category">{{category}}：</div>
+	<div class="article_title" title={{title}}>{{content}}</div>
+</div>
+{{/article}}
