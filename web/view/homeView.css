@@ -1,0 +1,381 @@
+#homeView{
+	width: 900px;
+	height: auto;
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#homeView_header{
+	width: 900px;
+	margin-bottom: 4px;
+}
+
+#homeView_header_top{
+	width: 900px;
+	height: 4px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#homeView_header_cont{
+	height: 40px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 40px;
+	border-collapse: separate;
+	position:relative;
+}
+
+#homeView_header_content{
+	margin:0 auto;
+	display:inline-block; 
+}
+
+#homeView_header_bot{
+	height: 4px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#homeView_welcome{
+	height: 24px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 24px;
+	border-bottom: 1px solid black;
+	vertical-align: middle;
+}
+
+#homeView_content{
+	width: 900px;
+	margin: 0px auto;
+	border: 1px solid black;
+	height:auto;
+	overflow: hidden;
+    min-height:543px;
+    position: relative;
+}
+
+#homeView_meta{
+	width: 150px;
+	height: 100%;
+	float: left;
+	padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    overflow: hidden;
+	border-right: 1px solid black;
+}
+
+#homeView_resume{
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+}
+
+#homeView_resume_img{
+	width: 118px;
+	height: 209px;
+	margin: 10px auto 10px auto;
+	background-color: #336699;
+	background-image: url(../img/mfl111.jpg);
+	background-size: cover;
+	opacity: 0.7;
+}
+
+#homeView_resume_text{
+	margin: 0px auto 0px auto;
+	width: 100px;
+	height: 20px;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+}
+
+#homeView_date{
+	margin-top: 3px;
+	border-top: 1px solid black;
+	float: left;
+	padding-bottom: 28px;
+	border-bottom: 1px solid black;
+}
+
+#homeView_date_week{
+	width: 100%;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+	text-align: center;
+	float: left;
+}
+
+#homeView_date_day{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Impact;
+	font-size: 36px;
+	text-align: center;
+	float: left;
+}
+
+#homeView_date_year{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 12px;
+	text-align: center;
+	float: left;
+}
+
+#homeView_weather{
+	width: 100%;
+	margin-top: 3px;
+	border-top: 1px solid black;
+	float: left;
+	padding-bottom: 28px;
+	border-bottom: 1px solid black;
+}
+
+#weather_icon{
+	width: 56px;
+	height: 56px;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	// background-image: url(../img/weather/100.png);
+	background-size: contain;
+}
+
+#weather_title{
+	width: 50px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 12px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#weather_temperature{
+	width: 60px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 12px;
+	margin-top: 8px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#homeView_body{
+	padding: 0px;
+    margin: 0px;
+	overflow: hidden;
+	font-size: 14px;
+	text-align: left;
+}
+
+#homeView_radom{
+	width: 305px;
+	height: 675px;
+	float: left;
+	border-right: 1px solid black;
+	padding-right: 30px;
+	overflow: hidden;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#section_header{
+	width: 300px;
+	height: 25px;
+	float: left;
+	font-weight: bold;
+	line-height: 25px;
+	background-color: #81B2E2;
+	padding-left: 5px;
+	margin-bottom: 10px;
+}
+
+#radom_list{
+	margin-left: 15px;
+	margin-top: 8px;
+}
+
+
+
+.article_category{
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.article_title{
+	max-width: 210px;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	text-decoration: underline;
+	vertical-align: bottom;
+}
+.article_title:hover{
+	background-color: #81B2E2;
+	cursor:pointer;
+}
+
+#homeView_near{
+	width: 305px;
+	height: 675px;
+	float: left;
+	overflow: hidden;
+	margin-left: 27px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#homeView_creat_login{
+	width: 300px;
+	text-align: center;
+}
+#homeView_creat{
+	font-size: 14px;
+	display: inline-block;
+	text-decoration: underline;
+	color: #ff0000;
+}
+#homeView_login{
+	font-size: 14px;
+	display: inline-block;
+	text-decoration: underline;
+	color: #ff0000;
+}
+#homeView_creat:hover{
+	background-color: #81B2E2;
+	cursor:pointer;
+}
+#homeView_login:hover{
+	background-color: #81B2E2;
+	cursor:pointer;
+}
+
+#photo_wall_header {
+	width: 300px;
+	height: 25px;
+	float: left;
+	font-weight: bold;
+	line-height: 25px;
+	background-color: #81B2E2;
+	padding-left: 5px;
+	margin-bottom: 10px;
+}
+
+#near_section_header{
+	width: 300px;
+	height: 25px;
+	float: left;
+	font-weight: bold;
+	line-height: 25px;
+	background-color: #81B2E2;
+	padding-left: 5px;
+	margin-bottom: 10px;
+}
+
+.navigation:hover{
+	background-color: #81B2E2;
+	cursor:pointer;
+}
+
+.navigation_left{
+	float: left;
+	width: 80px;
+	border-right: 1px solid black;
+}
+
+.navigation_content{
+	float: left;
+	width: 80px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.navigation_right{
+	float: left;
+	width: 80px;
+	border-left: 1px solid black;
+}
+
+#photo_wall_content{
+	width: 350px;
+}
+#homeView_photo_wall{
+	width: 300px;
+	margin-bottom: 10px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+#photo_wall{
+	width: 260px;
+	float: left;
+	font-size: 0px;
+	overflow: hidden;
+	position: relative;
+	margin-left: 20px;
+}
+
+.photo_list{
+	width: 50px;
+	height: 90px;
+	display:inline-block;
+	margin-right: 20px;
+	background-size: cover;
+	position: relative;
+}
+
+@-webkit-keyframes anim1{
+	0% {left: 0px}
+	20%{left: -70px}
+	20.001%{left: 280px}
+	100%{left: 0px}
+}
+@-webkit-keyframes anim2{
+	0% {left: 0px}
+	40%{left: -140px}
+	40.001%{left: 210px}
+	100%{left: 0px}
+}
+@-webkit-keyframes anim3{
+	0% {left: 0px}
+	60%{left: -210px}
+	60.001%{left: 140px}
+	100%{left: 0px}
+}
+@-webkit-keyframes anim4{
+	0% {left: 0px}
+	80%{left: -280px}
+	80.001%{left: 70px}
+	100%{left: 0px}
+}
+@-webkit-keyframes anim5{
+	0% {left: 0px}
+	100%{left: -350px}
+}
+
+.photo_list:nth-child(1){
+	-webkit-animation: anim1 10s linear infinite;
+}
+
+
+.photo_list:nth-child(2){
+	-webkit-animation: anim2 10s linear infinite;
+}
+.photo_list:nth-child(3){
+	-webkit-animation: anim3 10s linear infinite;
+}
+.photo_list:nth-child(4){
+	-webkit-animation: anim4 10s linear infinite;
+}
+.photo_list:nth-child(5){
+	-webkit-animation: anim5 10s linear infinite;
+}

@@ -1,0 +1,14 @@
+#resumeView{
+}
+
+#write {
+	max-width: 600px;
+    margin: 0px auto;
+    height: auto;
+    width: inherit;
+    word-break: normal;
+    word-wrap: break-word;
+    position: relative;
+    padding: 20px 30px 40px;
+    white-space: pre-wrap;
+}
