@@ -69,7 +69,7 @@ define(function (require, exports, module) {
 				handleColor: "#92bde8",
 				succColor: '#9bdc92',
 				progressColor: '#CCCCFF',
-				text: '滑动提交博文 》》》', 
+				text: '滑动提交博文 》》》',
     			succText: '博文提交成功!',
     			successFunc: function() {
     				var request = {
@@ -78,9 +78,10 @@ define(function (require, exports, module) {
     					blogTitle: $("#wangEditor > * > * > h1").html(),
     					blog: self.editor.txt.html()
     				};
-					$.when(mFanli.AddBlog(request)).done(function(result) {
-						result && result.returnCode === "000000000" && alert("日志已入库");
-					});
+    				var addBlogResp = mFanli.AddBlog(request);
+    				if (addBlogResp && addBlogResp.retCode === "000000000") {
+    					alert("日志已入库成功！");
+					}
 				}
 			});
 		}

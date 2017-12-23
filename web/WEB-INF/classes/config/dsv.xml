@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsv>
+    <inter id="AddBlog">
+        <interfaceName>/AddBlog</interfaceName>
+    </inter>
+    <inter id="SearchBlog">
+        <interfaceName>/SearchBlog</interfaceName>
+    </inter>
+</dsv>
+
+<!--<students>-->
+    <!--<student id="11">-->
+        <!--<name>张三</name>-->
+        <!--<course>JavaSE</course>-->
+        <!--<score>100</score>-->
+    <!--</student>-->
+    <!--<student id="22">-->
+        <!--<name>李四</name>-->
+        <!--<course>Oracle</course>-->
+        <!--<score>98</score>-->
+    <!--</student>-->
+<!--</students>-->
+
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
+
+<!--<beans>-->
+    <!--<bean>-->
+        <!--<property name="AddBlog">-->
+            <!--<value>AddBlog</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean>-->
+        <!--<property name="AddBlog">-->
+            <!--<value>AddBlog</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+<!--</beans>-->

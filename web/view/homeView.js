@@ -23,18 +23,6 @@ define(function(require, exports, module) {
 			this.setWeather();
 
 			this.bind();
-
-			this.$$("weather_icon").click(function () {
-                var request = {
-                    subscriberId: "1",
-                    category: "技术日志",
-                    blogTitle: "lallfdlasldflasd",
-                    blog: "askdfhjasklgaslh"
-                };
-                $.when(mFanli.AddBlog(request)).done(function(result) {
-                    result && result.returnCode === "000000000" && alert("日志已入库");
-                });
-            });
 		},
 
 		bind: function() {
@@ -68,10 +56,17 @@ define(function(require, exports, module) {
 
 		setWeather: function() {
 			var self = this;
+            // var weather = mFanli.getWeather();
+            // var imgUrl = "./img/weather/" + weather.HeWeather6[0].now.cond_code + ".png";
+            //
+            // self.$$("weather_icon").css("background-image", "url(" + imgUrl + ")");
+            // self.$$("weather_title").setText(weather.HeWeather6[0].now.cond_txt);
+            // self.$$("weather_temperature").setText(weather.HeWeather6[0].now.fl + "℃/" + weather.HeWeather6[0].now.tmp + "℃");
+
 			$.when(mFanli.getWeather()).done(function(weather) {
 				console.debug(weather);
 
-				imgUrl = "./img/weather/" + weather.HeWeather6[0].now.cond_code + ".png";
+				var imgUrl = "./img/weather/" + weather.HeWeather6[0].now.cond_code + ".png";
 
 				self.$$("weather_icon").css("background-image", "url(" + imgUrl + ")");
 				self.$$("weather_title").setText(weather.HeWeather6[0].now.cond_txt);
