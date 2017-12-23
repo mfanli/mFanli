@@ -91,30 +91,34 @@ window.mFanli = {};
 })(mFanli);
 
 (function(core) {
-	core.AddBlog = function(data){
+	core.send = function(interfaceId, data){
 		console.debug("mFanli AddBlog");
-		var def = $.Deferred();
+		var url = "http://" + gConfig.serviceIP + ":" + gConfig.servicePort + "/" + gConfig.serviceName + "/" + interfaceId + "Api";
+		var returnData = "";
 
-		  	$.ajax({
-				type: "POST",
-				dataType: "JSON",
-				data: JSON.stringify(data),
-				async: false,
-				url: "http://192.168.1.104:8080/JavaWeb/AddBlog",
-				success: function(data) {
-					console.debug("mFanli AddBlog success");
-					// data = data;
-					def.resolve(data);
-				},
-				error: function(res) {
-					console.debug("mFanli AddBlog error res:%s", res);
-					def.reject(res);
-				}
-			});
-		return def;
+		$.ajax({
+			type: "POST",
+			dataType: "JSON",
+			data: JSON.stringify(data),
+			async: false,
+			url: url,
+			success: function(data) {
+				console.debug("mFanli interface [%s] success, data=%s", interfaceId, data);
+                returnData = data;
+			},
+			error: function(res) {
+				console.debug("mFanli interface [%s]", interfaceId);
+			}
+		});
+
+		return returnData;
 	};
+})(mFanli);
 
-		
+(function(core) {
+	core.AddBlog = function(data){
+		return core.send("AddBlog", data)
+	};
 })(mFanli);
 
 });
