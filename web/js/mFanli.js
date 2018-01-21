@@ -93,7 +93,7 @@ window.mFanli = {};
 (function(core) {
 	core.send = function(interfaceId, data){
 		console.debug("mFanli AddBlog");
-		var url = "http://" + gConfig.serviceIP + ":" + gConfig.servicePort + "/" + gConfig.serviceName + "/" + interfaceId + "Api";
+		var url = "http://" + gConfig.serviceIP + ":" + gConfig.servicePort + "/" + gConfig.serviceName + "/" + interfaceId;
 		var returnData = "";
 
 		$.ajax({
@@ -118,6 +118,12 @@ window.mFanli = {};
 (function(core) {
 	core.AddBlog = function(data){
 		return core.send("AddBlog", data)
+	};
+})(mFanli);
+
+(function(core) {
+	core.GetBlogByTime = function(data){
+		return core.send("GetBlogByTime", data)
 	};
 })(mFanli);
 

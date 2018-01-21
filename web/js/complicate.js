@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
 	console.debug("complicate start!");
-	//var viewController = require("js/viewController.js");
+
 	var viewMap = {
 		homeView: {
 			html: require("text!view/homeView.html"),
@@ -16,6 +16,11 @@ define(function(require, exports, module) {
 			html: require("text!view/resumeView.html"),
 			control: require("view/resumeView.js"),
 			css: require("view/resumeView.css")
+		},
+        alertMessageView: {
+            html: require("text!view/alertMessageView.html"),
+            control: require("view/alertMessageView.js"),
+            css: require("view/alertMessageView.css")
 		}
 	};
 

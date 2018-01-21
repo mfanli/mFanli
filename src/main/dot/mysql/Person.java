@@ -1,4 +1,4 @@
-package dot.mysql;
+package main.dot.mysql;
 
 public class Person {
     private  Integer id;

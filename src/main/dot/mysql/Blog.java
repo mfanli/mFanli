@@ -1,7 +1,11 @@
-package dot.mysql;
+package main.dot.mysql;
+
+import java.sql.Timestamp;
 
 public class Blog {
     private String subscriberId;
+    private String id;
+    private Timestamp createTime;
     private String category;
     private String blogTitle;
     private String blog;
@@ -36,6 +40,22 @@ public class Blog {
 
     public void setBlog(String blog) {
         this.blog = blog;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
     }
 
     public String toString() {

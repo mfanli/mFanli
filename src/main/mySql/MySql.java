@@ -11,9 +11,8 @@ import java.io.InputStream;
 public class MySql {
     public static SqlSession getSqlSession() throws IOException {
         //        获取数据库会话
-        String resource = "sqlMapConfig.xml";
-        InputStream inputStream = null;
-        inputStream = Resources.getResourceAsStream(resource);
+        String resource = "main/mySql/sqlMapConfig.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         return sqlSessionFactory.openSession();
     }

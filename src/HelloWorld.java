@@ -28,7 +28,7 @@ public class HelloWorld extends HttpServlet{
 
         PrintWriter out = resp.getWriter();
 
-        String resource = "sqlMapConfig.xml";
+        String resource = "main/mySql/sqlMapConfig.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();

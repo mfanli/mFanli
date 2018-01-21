@@ -1,12 +1,21 @@
 {
 	"main_panle": "main_panle",
+
+	"homeViewHome": "首 页",
+	"homeViewWheel": "轮 子",
+	"homeViewBlog": "日 志",
+	"homeViewStory": "小 说",
+	"homeViewIdea": "想 法",
+
 	"homeViewNavigation": {
 		"left": "首 页",
 		"list": [{"module": "游 戏"}, {"module": "轮 子"}, {"module": "小 说"}],
 		"right": "想 法"
 	},
 	"homeViewWelcome": "欢 迎 访 问 孟 凡 立 的 个 人 主 页",
+
 	"homeViewResume": "个人简历",
+
 	"homeViewArticleRadom": {
 		"hasPhoto": true,
 		"photo_header": "照片墙",

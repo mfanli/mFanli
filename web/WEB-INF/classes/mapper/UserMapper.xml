@@ -4,11 +4,33 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="User">
-    <select id="findAll" resultType="dot.mysql.Person">
+    <select id="findAll" resultType="main.dot.mysql.Person">
          SELECT * FROM  person.Person
     </select>
 
-    <insert id="AddBlog" parameterType="dot.mysql.Blog">
-         INSERT INTO mfanli.blog (subscriberId,category,blogTitle,blog) VALUES (#{subscriberId},#{category},#{blogTitle},#{blog})
+    <!--添加博客-->
+    <insert id="AddBlog" parameterType="main.dot.mysql.Blog">
+         INSERT INTO mfanli.blog (subscriberId,id,createTime,category,blogTitle,blog) VALUES (#{subscriberId},#{id},#{createTime},#{category},#{blogTitle},#{blog})
     </insert>
+
+
+
+
+    <!--&lt;!&ndash;根据博客文类查询博客&ndash;&gt;-->
+    <!--<select id="getBlogByCategory" parameterType="main.dot.mysql.Blog" resultType="main.dot.mysql.Blog">-->
+        <!--SELECT * FROM  mfanli.blog WHERE subscriberId=#{} AND category=#{category}-->
+    <!--</select>-->
+
+    <!--根据博客创建时间查询博客-->
+    <select id="getBlogByTime" parameterType="main.dot.mysql.SelectBlogByTime" resultType="main.dot.mysql.Blog">
+        SELECT * FROM  mfanli.blog WHERE subscriberId=#{subscriberId} AND #{endTime}>createTime LIMIT 0,#{count}
+    </select>
+    <!--<select id="getBlogByTime" parameterType="main.dot.GetBlogByTimeRequest" resultType="main.dot.mysql.Blog">-->
+        <!--SELECT * FROM  mfanli.blog WHERE subscriberId=#{subscriberId} AND createTime>#{endTime} LIMIT 0,#{count}-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;根据博客ID查询博客&ndash;&gt;-->
+    <!--<select id="getBlogById" parameterType="main.dot.mysql.Blog" resultType="main.dot.mysql.Blog">-->
+        <!--SELECT * FROM  mfanli.blog WHERE subscriberId=#{} AND id=#{id}-->
+    <!--</select>-->
 </mapper>

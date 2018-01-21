@@ -1,4 +1,5 @@
 package constant;
 
-public class ErrorCode {
+public abstract class ErrorCode {
+    public final static String SUCCESS = "000000000";
 }

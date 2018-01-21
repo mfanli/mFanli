@@ -11,7 +11,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	text-align: justify;
-	background-color: #E7E7F7;
+	/*background-color: #E7E7F7;*/
 	background-image: url(../img/bg1.gif);
 	font-family: "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
@@ -22,10 +22,9 @@ body {
 }
 
 #globe_panle {
-    margin: 0 auto;
-    position: absolute;
+    position: fixed;
     left: 0px;
-    top: 0px;
+	top: 0px;
 }
 
 #footer {
