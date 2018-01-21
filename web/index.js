@@ -8,12 +8,4 @@ define(function(require, exports, module) {
 		name: "helen",
 		age: 18
 	});
-
-	
-/*	var Text = require("view/testView.js");
-
-	var tt = new Text({
-		name: "helen",
-		age: 18
-	});*/
 });

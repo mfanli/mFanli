@@ -1,7 +1,4 @@
-import dot.Result;
-import main.api.AddBlogApi;
 import net.sf.json.JSONObject;
-import utils.Analysis;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
-@WebServlet(name = "Inteface", urlPatterns = {"AddBlog", "SearchBlog"})
+@WebServlet(name = "Inteface", urlPatterns = {"/AddBlog", "/GetBlog", "/GetBlogByCategory", "/GetBlogByTime"})
 public class Entry extends HttpServlet {
 
     @Override
@@ -29,15 +26,16 @@ public class Entry extends HttpServlet {
 
         PrintWriter out = resp.getWriter();
 
-        // 校验是否实现了接口
         String servletPath = req.getServletPath();
-        boolean hasInterface = Analysis.analysisXml().contains(servletPath);
-        if (!hasInterface) {
-            Result result = new Result();
-            result.setRetCode("125000001");
-            result.setRetMsg("No such interface!");
-            out.println(JSONObject.fromObject(result).toString());
-        }
+
+        // 校验是否实现了接口
+//        boolean hasInterface = Analysis.analysisXml().contains(servletPath);
+//        if (!hasInterface) {
+//            Result result = new Result();
+//            result.setRetCode("125000001");
+//            result.setRetMsg("No such interface!");
+//            out.println(JSONObject.fromObject(result).toString());
+//        }
 
         JSONObject reqJSONObject = getJSONObject(req.getReader());
 
@@ -50,8 +48,8 @@ public class Entry extends HttpServlet {
             String servletResponse = servletInterface + "Response";
 
 //            实例化
-            Object reqObj = Class.forName("dot." + servletRequest).newInstance();
-            Object respObj = Class.forName("dot." + servletResponse).newInstance();
+            Object reqObj = Class.forName("main.dot." + servletRequest).newInstance();
+            //Object respObj = Class.forName("main.dot." + servletResponse).newInstance();
 
 
 
@@ -65,21 +63,33 @@ public class Entry extends HttpServlet {
                 String nameUp = name.substring(0, 1).toUpperCase() + name.substring(1); //将属性的首字符大写，方便构造get，set方法
                 String type = field[j].getGenericType().toString(); //获取属性的类型
 
-                Method m = reqObj.getClass().getMethod("set" + nameUp, new Class[]{String.class});
+
+                if (!reqJSONObject.containsKey(name))
+                {
+                    continue;
+                }
                 if (type.equals("class java.lang.String")) { //如果type是类类型，则前面包含"class "，后面跟类名
 //                    执行set方法
+                    Method m = reqObj.getClass().getMethod("set" + nameUp, new Class[]{String.class});
                     m.invoke(reqObj, new Object[]{reqJSONObject.getString(name)});
                 }
                 if (type.equals("class java.lang.Integer")) {
-                    m.invoke(reqObj, new Object[]{reqJSONObject.getInt(name)});
+                    //m.invoke(reqObj, new Object[]{reqJSONObject.getInt(name)});
+
+                    Method m = reqObj.getClass().getMethod("set" + nameUp, new Class[]{Integer.class});
+                    //终端传入都为String，此处需要转换类型。
+                    m.invoke(reqObj, new Object[]{Integer.valueOf(reqJSONObject.getString(name))});
                 }
                 if (type.equals("class java.lang.Short")) {
+                    Method m = reqObj.getClass().getMethod("set" + nameUp, new Class[]{String.class});
                     m.invoke(reqObj, new Object[]{reqJSONObject.getInt(name)});
                 }
                 if (type.equals("class java.lang.Double")) {
+                    Method m = reqObj.getClass().getMethod("set" + nameUp, new Class[]{String.class});
                     m.invoke(reqObj, new Object[]{reqJSONObject.getDouble(name)});
                 }
                 if (type.equals("class java.lang.Boolean")) {
+                    Method m = reqObj.getClass().getMethod("set" + nameUp, new Class[]{String.class});
                     m.invoke(reqObj, new Object[]{reqJSONObject.getBoolean(name)});
                 }
             }
@@ -89,7 +99,7 @@ public class Entry extends HttpServlet {
             Class c = Class.forName(classPath); //包名
             String methodName = servletInterface.substring(0, 1).toLowerCase() + servletInterface.substring(1);
             Method m = c.getMethod(methodName, reqObj.getClass()); //Sigleton有一个方法
-            respObj = m.invoke(c.newInstance(), reqObj); //调用接口方法
+            Object respObj = m.invoke(c.newInstance(), reqObj); //调用接口方法
 
             resp.setStatus(200);
             String jsonString = JSONObject.fromObject(respObj).toString();

@@ -1,4 +1,4 @@
-package dot;
+package main.dot;
 
 public class Result {
     private String retCode;
@@ -17,6 +17,12 @@ public class Result {
     }
 
     public void setRetMsg(String retMsg) {
+        this.retMsg = retMsg;
+    }
+
+    public Result (String retCode, String retMsg)
+    {
+        this.retCode = retCode;
         this.retMsg = retMsg;
     }
 }

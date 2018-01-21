@@ -1,4 +1,4 @@
-package dot;
+package main.dot;
 
 public class AddBlogRequest {
     private String subscriberId;

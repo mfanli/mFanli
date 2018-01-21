@@ -1,0 +1,34 @@
+#alertMessageView {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    background-color: #81B2E2;
+}
+
+#alertMessageView_head {
+    width: 100%;
+    height: 50px;
+    background-color: #48993f;
+    text-align: center;
+    line-height: 50px;
+}
+
+#alertMessageView_message {
+    width: 100%;
+    height: 150px;
+}
+
+#alertMessageView_messageText {
+    width: auto;
+    max-width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+}

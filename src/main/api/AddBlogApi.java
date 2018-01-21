@@ -1,7 +1,7 @@
 package main.api;
 
-import dot.AddBlogRequest;
-import dot.AddBlogResponse;
+import main.dot.AddBlogRequest;
+import main.dot.AddBlogResponse;
 
 public interface AddBlogApi {
     AddBlogResponse addBlog (AddBlogRequest request);

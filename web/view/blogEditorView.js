@@ -1,5 +1,6 @@
 define(function (require, exports, module) {
 	var Tclass = require("js/viewController.js");
+	var Tools = require("js/utils/tools.js");
 
 	var Class = Tclass.extend({
 		initialize: function(option) {
@@ -72,19 +73,25 @@ define(function (require, exports, module) {
 				text: '滑动提交博文 》》》',
     			succText: '博文提交成功!',
     			successFunc: function() {
-    				var request = {
-    					subscriberId: "1",
-    					category: "技术日志",
-    					blogTitle: $("#wangEditor > * > * > h1").html(),
-    					blog: self.editor.txt.html()
-    				};
-    				var addBlogResp = mFanli.AddBlog(request);
-    				if (addBlogResp && addBlogResp.retCode === "000000000") {
-    					alert("日志已入库成功！");
-					}
+    				self.slideUnLockSuccess()
 				}
 			});
-		}
+		},
+
+		slideUnLockSuccess: function () {
+            var request = {
+                subscriberId: "1",
+                category: "技术日志",
+                blogTitle: $("#wangEditor > * > * > h1").html(),
+                blog: this.editor.txt.html()
+            };
+            var addBlogResp = mFanli.AddBlog(request);
+
+            if (Tools.isResultSuccess(addBlogResp)) {
+            	gWindowManagement.destroyHomeView("blogEditorView");
+                gWindowManagement.pushGlobView("alertMessageView", "日志已成功入库！");
+            }
+        }
 	});
 
 	return Class;
